@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
+use Stripe ;
 class CartsController extends Controller
 {
     /**
@@ -112,7 +113,7 @@ class CartsController extends Controller
         return response()->json($finaldata);
     }
 
-    public function payment(Request $request){
-        return $request;
-    }
+    
+
 }
+

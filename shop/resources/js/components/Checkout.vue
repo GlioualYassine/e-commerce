@@ -101,16 +101,24 @@
                  <div class="d-flex flex-row">
 
 
-                     <div class="inputbox mt-3 mr-2"> <input type="text" v-model="expiry" name="name" class="form-control" required="required"> <span>Expiry</span> </div>
+                     <div class="inputbox mt-3 mr-2"> <input type="text" v-model="exp_year" name="name" class="form-control" required="required"> <span>Expiry year</span> </div>
 
-                  <div class="inputbox mt-3 mr-2"> <input type="text" name="name" v-model="cvv" class="form-control" required="required"> <span>CVV</span> </div>
 
 
                  </div>
 
 
-            </div>
 
+
+                    <div class="d-flex flex-row">
+
+                      <div class="inputbox mt-6 mr-2"> <input type="text" v-model="exp_mm" name="name" class="form-control" required="required"> <span>Expiry month</span> </div>
+                   </div>
+                   <div class="d-flex flex-row">
+                      <div class="inputbox mt-3 mr-2"> <input type="text" name="name" v-model="cvv" class="form-control" required="required"> <span>CVC</span> </div>
+
+                   </div>
+            </div>
 
         </div>
 
@@ -226,7 +234,8 @@ import axios from 'axios';
                 totalAmount : 0,
                 name : '',
                 numcart : '',
-                expiry : '',
+                exp_year : '',
+                exp_mm : '',
                 cvv : '',
                 street : '',
                 city : '',
@@ -249,7 +258,8 @@ import axios from 'axios';
                 let response = await axios.post('/payment',{
                     name : this.name,
                     numcart : this.numcart,
-                    expiry : this.expiry,
+                    exp_year : this.exp_year,
+                    exp_month : this.exp_mm,
                     cvv : this.cvv,
                     street : this.street,
                     state : this.state,
